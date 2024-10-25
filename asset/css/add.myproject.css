@@ -1,0 +1,201 @@
+.container-me{
+    width: 100%;
+}
+
+.header-name {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.btn-container-me {
+  text-align: right;
+}
+
+.button-submit {
+  background-color: #000;
+  color: white;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15%;
+}
+.project-list{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.card-project-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .card-project {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    border: 1px solid black;
+    width: 100%; /* Full width within its column */
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-duration {
+    font-size: 1rem;
+    color: gray;
+    margin-top: 4px;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  
+  .card-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    gap: 10px;
+  }
+  
+  .edit-btn {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .card-image-projet {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-project-display{
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 50px;
+   
+}
+
+  .card-project {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid black;
+    /* margin: 0 auto */
+}
+    
+.card-content {
+    margin-top: 16px;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.card-duration {
+    font-size: 20px;
+    color: gray;
+    margin-top: 4px;
+}
+
+.card-description {
+    font-size: 30px;
+    color: #555;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.card-icons {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    gap: 10px;
+    margin-top: 5px;
+    
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #3b82f6;
+    color: white;
+    width: 50%;
+}
+
+.delete-btn {
+    background-color: #ef4444;
+    color: white;
+    width: 50%;
+}
+
+.card-image-projet{
+    width: 100%;
+}
+
+.title-project{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.project-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 50px;
+    margin:50px;
+}

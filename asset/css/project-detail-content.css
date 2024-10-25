@@ -1,0 +1,94 @@
+
+.project-detail{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.title-name-project{
+   font-weight: bolder;
+   font-size: 60px;
+    
+}
+.lms-web-layout{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.lms-img{
+    margin: 0 auto;
+    box-shadow: 1px 1px 15px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+    background-color: white;
+}
+
+.duration-project{
+    display: flex;
+    flex-direction: row;
+}
+
+.layout-kanan{
+    padding-left: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.duration-value{
+    display: flex;
+    flex-direction: row;
+}
+
+.duration-image img{
+    width: 20px;
+    margin-top: 24px;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.duration-text{
+    justify-content: center;
+    margin-left: 10px;
+    
+}
+.duration-text{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tech{
+    display: flex;
+    gap: 20px;
+}
+
+.tech-value{
+    display: flex;
+    flex-direction: row;
+}
+
+.tech-image img{
+    width: 20px;
+    margin-top: 24px;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.tech-text{
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.desain-layout{
+    background-color: #ffde59;
+    border: 5px solid black;
+    width: 80%;
+    margin: auto;
+}
+
+.text-detail{
+    text-align: justify;
+    padding: 3%;
+}

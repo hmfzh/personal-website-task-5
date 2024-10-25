@@ -1,0 +1,20 @@
+{
+  "name": "task-5",
+  "version": "1.0.0",
+  "description": "this is my personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "personak",
+    "web",
+    "taks",
+    "5"
+  ],
+  "author": "Muhammad Ilham Hafizha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
