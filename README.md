@@ -4,6 +4,12 @@
 #### Link Webiste Vercel
 https://personal-website-task-10.vercel.app/
 
+#### Link Recording
+https://drive.google.com/file/d/1OF5h7WJ_VE6Vmui491npmvFwNZ9auX9-/view?usp=sharing
+
+### Task Day 6-9 ada disini
+https://github.com/hmfzh/personal-web-task-1-4
+
 # Implementasi Bootstrap dan Node.js pada Personal Website
 * **Halaman Add Project** 
 ![screencapture-127-0-0-1-5500-index-html-2024-10-25-20_46_46](https://github.com/user-attachments/assets/5ffe1d0b-04aa-48d2-8ce4-d6c70a176e89)
