@@ -1,3 +1,18 @@
+# Summary Task Week 3 
+## Fitur yang Diimplementasikan
+- **Express dengan Handlebars**: Mengimplementasikan server web menggunakan Express.js dengan Handlebars sebagai mesin templating untuk merender tampilan.
+  
+- **Operasi CRUD di Server Lokal**: Mengembangkan operasi Create, Read, Update, dan Delete (CRUD) di server Express lokal untuk mengelola data secara efektif.
+  
+- **Integrasi Basis Data PostgreSQL**: Mengintegrasikan PostgreSQL sebagai basis data untuk proyek, memungkinkan penyimpanan dan pengambilan data yang efisien.
+  
+- **Operasi CRUD Menggunakan Basis Data**: Mengimplementasikan fungsionalitas CRUD yang berinteraksi dengan basis data PostgreSQL, memastikan keberlanjutan dan pengelolaan data.
+
+## Vidio Record
+
+
+
+
 # Summary Taks Week 2 Day 10
 
 ## Minggu 2 Hari 10
