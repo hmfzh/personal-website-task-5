@@ -120,12 +120,12 @@ async function addmyprojectPost(req, res) {
 
 async function projectDelete(req, res) {
     const { id } = req.params;
-    console.log("Blog index yang akan didelete : ", id);
+    // console.log("Blog index yang akan didelete : ", id);
 
-    const query = `DELETE FROM addproject WHERE id = ${id}`
+    const query = `DELETE FROM addproject WHERE id = ${id}`;
     await sequelize.query(query, { type: QueryTypes.DELETE });
 
-    res.redirect("/addmyproject")
+    res.redirect("/addmyproject");
 }
 
 async function editProject(req, res) {
