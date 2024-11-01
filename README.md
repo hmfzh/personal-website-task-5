@@ -8,9 +8,10 @@
   
 - **Operasi CRUD Menggunakan Basis Data**: Mengimplementasikan fungsionalitas CRUD yang berinteraksi dengan basis data PostgreSQL, memastikan keberlanjutan dan pengelolaan data.
 
-## Vidio Record
+## Vidio Record Week 3
 https://drive.google.com/file/d/1z3_6dKesu1JR5mlzsk_3N5AXDrHtYnQc/view?usp=sharing
 
+##
 
 
 
