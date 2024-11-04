@@ -11,6 +11,9 @@
 ## Vidio Record Week 3
 https://drive.google.com/file/d/1z3_6dKesu1JR5mlzsk_3N5AXDrHtYnQc/view?usp=sharing
 
+## Vercel Deploy (Masih error 404)
+https://task-5-7cba8vkx5-hmfzhs-projects.vercel.app/
+
 ##
 
 
