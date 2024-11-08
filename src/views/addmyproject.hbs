@@ -116,35 +116,6 @@
     <div id="contents" class="project-list flex-wrap">
         {{#each projects}}
 
-        {{!-- <div class="card-project-display">
-            <div class="card-project">
-                <img src="{{image}}" alt="Project Image" class="card-image-projet" style="width: 350px;" />
-                <div class="card-content">
-                    <h2 class="card-title">
-                        <a href="/project-detail/{{id}}" target="_blank">{{title}}</a>
-                    </h2>
-                    <p class="card-duration">Durasi: {{description}} Hari</p>
-                    <p class="card-duration">Teknologi yang digunakan</p>
-                    {{technologies}}
-                    <p class="card-description">{{message}}</p>
-                    <div class="card-icons">
-                        <img src="/asset/img/web.png" alt="Web" class="icon" />
-                        <img src="/asset/img/android.png" alt="Android" class="icon" />
-                        <img src="/asset/img/javascript.png" alt="JavaScript" class="icon" />
-                    </div>
-                    <div style="display: flex; padding-top:20px"> Project Dibuat oleh -<b>{{name}}</b></div>
-                    {{#if ../user}}
-                    <div class="card-buttons">
-                        <a href="/edit-project/{{id}}" class="btn edit-btn">Edit</a>
-                        <form action="/delete-project/{{id}}" method="post">
-                            <button type="submit" class="btn delete-btn" style="padding-right: 25px;">x</button>
-                        </form>
-                    </div>
-                    {{/if}}
-                </div>
-            </div>
-        </div> --}}
-
         <div class="card-project-display">
             <div class="card-project">
                 <img src="{{image}}" alt="Project Image" class="card-image-project"
@@ -172,7 +143,7 @@
                         {{#if ../user}}
                         <div class="card-buttons py-3 mt-auto">
                             <a href="/edit-project/{{id}}" class="btn edit-btn">Edit</a>
-                            <form action="/delete-project/{{id}}" method="post" onsubmit="confirmLogout()"
+                            <form action="/delete-project/{{id}}" method="post" onsubmit="confirmDelete(event)"
                                 class="delete-form">
                                 <button type="submit" class="btn delete-btn" style="width: 50px;">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
@@ -191,8 +162,12 @@
     </div>
 
     <script>
-        function confirmLogout() {
-            confirm("Apakah Anda yakin ingin menghapus ini?");
+        function confirmDelete(event) {
+            if (!confirm("Apakah Anda yakin ingin logout?")) {
+                event.preventDefault();
+            } else {
+                window.location.href = '/logout';
+            }
         }
     </script>
 

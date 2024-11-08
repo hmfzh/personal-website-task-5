@@ -28,27 +28,25 @@
                     <li class="nav-item hover ">
                         <a class="nav-link " href="/addmyproject">My Project</a>
                     </li>
-                       <li class="nav-item hover ">
+                    <li class="nav-item hover ">
                         <a class="nav-link " href="/testimonial">Testimonial</a>
                     </li>
 
                 </ul>
 
-              
+
 
 
 
                 {{#if user}}
-           
 
-              
 
-                       <div class="d-flex flex-column mx-3">
+                <div class="d-flex flex-column mx-3">
                     <h5 style="margin: 0;padding:0;">Halo </h5>
                     <p style="margin: 0;padding:0;">{{user.name}}!</p>
                 </div>
 
-                  <form action="/logout" method="post" onsubmit="confirmLogout()">
+                <form action="/logout" method="post" onsubmit="confirmLogout(event)">
 
                     <button class="btn btn-light rounded-pill px-4 mx-2" type="submit" style="border: 1px solid black;">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -57,7 +55,7 @@
 
                 {{else}}
                 <div class="dropdown" style="margin-right: 10px;">
-                    <button class="btn btn-light rounded-pill" type="button" id="dropdownMenuButton" 
+                    <button class="btn btn-light rounded-pill" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style="border: 1px solid black;">
                         <i class="bi bi-person">MASUK</i>
@@ -69,11 +67,11 @@
                 </div>
                 {{/if}}
 
-        <div class=" mb-2 mb-lg-0 mt-1">
-    <button class="btn btn-light rounded-pill" type="submit" style="border: 1px solid black;">
-        <a class="text-dark" href="/contact">Contact Me</a>
-    </button>
-</div>
+                <div class=" mb-2 mb-lg-0 mt-1">
+                    <button class="btn btn-light rounded-pill" type="submit" style="border: 1px solid black;">
+                        <a class="text-dark" href="/contact">Contact Me</a>
+                    </button>
+                </div>
                 </form>
             </div>
         </div>
@@ -138,8 +136,12 @@
 
 
     <script>
-        function confirmLogout() {
-            confirm("Apakah Anda yakin ingin logout?");
+        function confirmLogout(event) {
+            if (!confirm("Apakah Anda yakin ingin logout?")) {
+                event.preventDefault();
+            } else {
+                window.location.href = '/logout';
+            }
         }
     </script>
 
