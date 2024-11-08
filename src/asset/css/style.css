@@ -89,3 +89,7 @@ nav a {
   border: 5px solid black;
 }
 
+.dropdown-item:hover {
+  color: white; 
+  background-color: black;
+}

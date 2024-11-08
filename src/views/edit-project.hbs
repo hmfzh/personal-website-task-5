@@ -42,11 +42,11 @@
     <div>
         <h3 class="text-center mt-5 header-name">Edit MY PROJECT</h3>
         <div class="container container-me">
-            <form method="post" class="row g-3" action="/edit-project/{{project.id}}" id="form-style">
+            <form method="post" class="row g-3" action="/edit-project/{{project.id}}" id="form-style" enctype="multipart/form-data">
                 {{!-- Project Name --}}
                 <div class="col-12 ">
                     <label for="name">Project Name</label>
-                    <input type="text" name="title" id="name" class="form-control" value="{{project.title}}" required>
+                    <input type="text" id="name" class="form-control" value="{{project.title}}" required>
                 </div>
                 {{!-- Start Date and End Date --}}
                 <div class="col-12">
@@ -59,7 +59,7 @@
                         <div class="col-6">
                             <label for="end-date">End Date</label>
                             <input type="date" name="end_date" id="end-date" class="form-control"
-                                value="{{project.endDate}}" required>
+                                value="{{project.end_date}}" required>
                         </div>
                     </div>
                 </div>
@@ -99,30 +99,32 @@
                     <label>Technologies</label>
                     <div class="form-check checkbox-group">
                         <input class="form-check-input" type="checkbox" name="technologies" value="NodeJs" id="NodeJs"
-                            {{#if (includes project.selectedTechnologies "NodeJs" )}}checked{{/if}}>
+                            {{#if (includes project.technologies "NodeJs" )}}checked{{/if}}>
                         <label class="form-check-label" for="NodeJs">Node Js</label>
                     </div>
                     <div class="form-check input-checkbox">
                         <input class="form-check-input" type="checkbox" name="technologies" value="NextJs" id="NextJs"
-                            {{#if (includes project.selectedTechnologies "NextJs" )}}checked{{/if}}>
+                            {{#if (includes project.technologies "NextJs" )}}checked{{/if}}>
                         <label class="form-check-label" for="NextJs">Next Js</label>
                     </div>
                     <div class="form-check input-checkbox">
                         <input class="form-check-input" type="checkbox" name="technologies" value="ReactJs" id="ReactJs"
-                            {{#if (includes project.selectedTechnologies "ReactJs" )}}checked{{/if}}>
+                            {{#if (includes project.technologies "ReactJs" )}}checked{{/if}}>
                         <label class="form-check-label" for="ReactJs">React Js</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="technologies" value="TypeScript"
-                            id="TypeScript" {{#if (includes project.selectedTechnologies "TypeScript" )}}checked{{/if}}>
+                            id="TypeScript" {{#if (includes project.technologies "TypeScript" )}}checked{{/if}}>
                         <label class="form-check-label" for="TypeScript">TypeScript</label>
                     </div>
                 </div>
+                
 
                 {{!-- Upload Image --}}
                 <div class="col-12">
-                    <img src="{{project.image}}" alt="" style="width: 200px;border-radius:10px; margin-bottom:10px"><br>
-                    <input type="file" name="image" id="input-project-image" class="form-control"
+                    <img src="{{project.image}}" alt="" style="width: 100%;border-radius:10px; margin-bottom:10px;border:1px solid black"><br>
+                
+                    <input type="file" name="imageedit" id="input-project-image" class="form-control"
                         value="{{project.image}}">
                 </div>
 

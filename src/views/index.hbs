@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
         <div class="container-fluid">
             <img src="asset/img/logo.jpg" alt="" class="img-fluid img-nav" />
@@ -21,8 +22,7 @@
             </button>
             <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-
-                    <li class="nav-item hover px-3">
+                    <li class="nav-item hover ">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item hover ">
@@ -31,16 +31,61 @@
 
                 </ul>
 
-                <button class="btn btn-light rounded-pill" type="submit" style="border: 1px solid black;">
-                    <a style="color: black;" href="/contact"> Contact Me </a>
-                </button>
+              
+
+
+
+                {{#if user}}
+           
+
+              
+
+                       <div class="d-flex flex-column mx-3">
+                    <h5 style="margin: 0;padding:0;">Halo </h5>
+                    <p style="margin: 0;padding:0;">{{user.name}}!</p>
+                </div>
+
+                  <form action="/logout" method="post" onsubmit="confirmLogout()">
+
+                    <button class="btn btn-light rounded-pill px-4 mx-2" type="submit" style="border: 1px solid black;">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </button>
+                </form>
+
+                {{else}}
+                <div class="dropdown" style="margin-right: 10px;">
+                    <button class="btn btn-light rounded-pill" type="button" id="dropdownMenuButton" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="border: 1px solid black;">
+                        <i class="bi bi-person">MASUK</i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/login">Login</a>
+                        <a class="dropdown-item" href="/register">Register</a>
+                    </div>
+                </div>
+                {{/if}}
+
+        <div class=" mb-2 mb-lg-0 mt-1">
+    <button class="btn btn-light rounded-pill" type="submit" style="border: 1px solid black;">
+        <a class="text-dark" href="/contact">Contact Me</a>
+    </button>
+</div>
                 </form>
             </div>
         </div>
     </nav>
 
+
+    {{#if messages.success}}
+    <div class="alert alert-success" role="alert">
+        {{messages.success}}
+    </div>
+    {{/if}}
+
     <div class="container mt-5 d-flex-me">
         <div class="row align-items-center">
+
             <div class="col-12 col-md-6 ">
                 <h2>Hi Welcome to my hut</h2>
                 <p>
@@ -74,8 +119,8 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 mt-4">
-                <div class="col-md-auto">
-                    <div class="card" style="width: 100%;">
+                <div class="col-md-auto px-4" style="justify-items: end;">
+                    <div class="card" style="width: 80%;">
                         <img class="card-img-top"
                             src="https://img.freepik.com/premium-photo/ai-human-avatar-characters-male-model_1166271-38.jpg?w=740">
                         <div class="card-body text-center">
@@ -89,171 +134,19 @@
     </div>
 
 
-    <div class="container col-12 col-sm-6 mb-4">
-        <h3 class="text-center mb-5">My Project</h3>
-        <div class="row ">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://cdn.dribbble.com/userupload/13129607/file/original-f2ace1ea9080485a25b46ba38924d699.png?resize=450x338&vertical=center"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="project-detail.html" target="_blank">Mobile Application for Cyclist</a>
-                        </h5>
-                        <p class="card-text">Durasi: 1 Bulan</p>
-                        <p class="card-text">Teknologi yang digunakan Flutter</p>
-                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="asset/img/web.png" alt="Web" class="icon me-2">
-                                <img src="asset/img/android.png" alt="Android" class="icon me-2">
-                                <img src="asset/img/javascript.png" alt="JavaScript" class="icon me-2">
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button class="btn btn edit-btn btn-primary">Edit</button>
-                            <button class="btn btn delete-btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://cdn.dribbble.com/userupload/11475635/file/original-59340e978a170506b2fd71aca3e455ce.png?resize=1024x768"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="project-detail.html" target="_blank">Fitplan - Planner Dashboard</a>
-                        </h5>
-                        <p class="card-text">Durasi: 2 Bulan</p>
-                        <p class="card-text">Teknologi yang digunakan NodeJS</p>
-                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="asset/img/web.png" alt="Web" class="icon me-2">
-                                <img src="asset/img/android.png" alt="Android" class="icon me-2">
-                                <img src="asset/img/javascript.png" alt="JavaScript" class="icon me-2">
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button class="btn btn edit-btn btn-primary">Edit</button>
-                            <button class="btn btn delete-btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://cdn.dribbble.com/userupload/7187831/file/original-4c8c841ddf8729c4fc41723d79e89b29.jpg?resize=1024x768"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="project-detail.html" target="_blank">Time Tracker Dashboard </a>
-                        </h5>
-                        <p class="card-text">Durasi: 1 Tahun days</p>
-                        <p class="card-text">Teknologi yang digunakan ReactJs</p>
-                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="asset/img/web.png" alt="Web" class="icon me-2">
-                                <img src="asset/img/android.png" alt="Android" class="icon me-2">
-                                <img src="asset/img/javascript.png" alt="JavaScript" class="icon me-2">
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button class="btn btn edit-btn btn-primary">Edit</button>
-                            <button class="btn btn delete-btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://cdn.dribbble.com/userupload/4084519/file/original-2f7d2700874c51f1984145a246abf213.png?resize=1024x768"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="project-detail.html" target="_blank">GoodNotes - Collaborative Notes Mobile App</a>
-                        </h5>
-                        <p class="card-text">Durasi: 3 Bulan</p>
-                        <p class="card-text">Teknologi yang digunakan React </p>
-                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="asset/img/web.png" alt="Web" class="icon me-2">
-                                <img src="asset/img/android.png" alt="Android" class="icon me-2">
-                                <img src="asset/img/javascript.png" alt="JavaScript" class="icon me-2">
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button class="btn btn edit-btn btn-primary">Edit</button>
-                            <button class="btn btn delete-btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://cdn.dribbble.com/userupload/9065001/file/original-6d5c0d1a85a0d3423769817fb75753a5.png?resize=1024x768"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="project-detail.html" target="_blank">Task & Project Management Dashboard</a>
-                        </h5>
-                        <p class="card-text">Durasi: 6 Bulan</p>
-                        <p class="card-text">Teknologi yang digunakan Bootsrap</p>
-                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="asset/img/web.png" alt="Web" class="icon me-2">
-                                <img src="asset/img/android.png" alt="Android" class="icon me-2">
-                                <img src="asset/img/javascript.png" alt="JavaScript" class="icon me-2">
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button class="btn btn edit-btn btn-primary">Edit</button>
-                            <button class="btn btn delete-btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://cdn.dribbble.com/userupload/15413648/file/original-e6395c63b07b9dcbd324efbf6b44b52b.png?resize=1024x768"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="project-detail.html" target="_blank">Task & Project Management Landing Page</a>
-                        </h5>
-                        <p class="card-text">Durasi: 1 Tahun days</p>
-                        <p class="card-text">Teknologi yang digunakan NodeJS</p>
-                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="asset/img/web.png" alt="Web" class="icon me-2">
-                                <img src="asset/img/android.png" alt="Android" class="icon me-2">
-                                <img src="asset/img/javascript.png" alt="JavaScript" class="icon me-2">
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button class="btn btn edit-btn btn-primary">Edit</button>
-                            <button class="btn btn delete-btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <script>
+        function confirmLogout() {
+            confirm("Apakah Anda yakin ingin logout?");
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
