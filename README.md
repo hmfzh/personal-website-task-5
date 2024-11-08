@@ -1,3 +1,14 @@
+# Summary Task Week 4 [Deploy]
+
+## Fitur yang Diimplementasikan
+- Membuat fitur user dan login menggunakan PostgreSQL
+- Menerapkan session untuk waktu login
+- Menerapkan flash messages untuk menampilkan alert
+- Membuat fitur upload gambar menggunakan Multer yang dikirim ke PostgreSQL
+- Deploy ke vercel
+  https://personal-website-task-10-i39twphbo-hmfzhs-projects.vercel.app/
+
+#
 # Summary Task Week 3 
 ## Fitur yang Diimplementasikan
 - **Express dengan Handlebars**: Mengimplementasikan server web menggunakan Express.js dengan Handlebars sebagai mesin templating untuk merender tampilan.
