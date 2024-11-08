@@ -9,10 +9,11 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="/asset/css/style.css">
     <link rel="stylesheet" href="/asset/css/add.myproject.css">
+
 </head>
 
 <body>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
         <div class="container-fluid">
             <img src="asset/img/logo.jpg" alt="" class="img-fluid img-nav" />
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
@@ -39,11 +40,13 @@
         </div>
     </nav>
 
-
+    {{#if user}}
     <div>
+
+
         <h3 class="text-center mt-5 header-name">ADD MY PROJECT</h3>
         <div class="container container-me">
-            <form method="post" class="row g-3" action="/addmyproject" id="form-style">
+            <form method="post" class="row g-3" action="/addmyproject" id="form-style" enctype="multipart/form-data">
                 {{!-- Project Name --}}
                 <div class="col-12 ">
                     <label for="name">Project Name</label>
@@ -93,7 +96,7 @@
                 {{!-- Upload Image --}}
                 <div class="col-12">
                     <label for="input-project-image">Upload Image</label>
-                    <input type="file" name="image" id="input-project-image" class="form-control">
+                    <input type="file" name="uploadimage" id="input-project-image" class="form-control">
                 </div>
 
                 <div class="col-12 btn-container-me">
@@ -102,16 +105,17 @@
             </form>
         </div>
         </form>
-    </div>
 
+    </div>
     <hr class="line" />
+    {{/if}}
     <h1 class="title-project text-center mt-5">My Project</h1>
     <div id="contents" class="project-list flex-wrap">
         {{#each projects}}
-        {{!-- <h1>{{@index}}</h1> --}}
-        <div class="card-project-display">
+
+        {{!-- <div class="card-project-display">
             <div class="card-project">
-                <img src="{{image}}" alt="Project Image" class="card-image-projet" />
+                <img src="{{image}}" alt="Project Image" class="card-image-projet" style="width: 350px;" />
                 <div class="card-content">
                     <h2 class="card-title">
                         <a href="/project-detail/{{id}}" target="_blank">{{title}}</a>
@@ -125,27 +129,75 @@
                         <img src="/asset/img/android.png" alt="Android" class="icon" />
                         <img src="/asset/img/javascript.png" alt="JavaScript" class="icon" />
                     </div>
+                    <div style="display: flex; padding-top:20px"> Project Dibuat oleh -<b>{{name}}</b></div>
+                    {{#if ../user}}
                     <div class="card-buttons">
                         <a href="/edit-project/{{id}}" class="btn edit-btn">Edit</a>
                         <form action="/delete-project/{{id}}" method="post">
-                            <button type="submit" class="btn delete-btn" style="padding-right: 25px;" >x</button>
+                            <button type="submit" class="btn delete-btn" style="padding-right: 25px;">x</button>
                         </form>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div> --}}
+
+        <div class="card-project-display">
+            <div class="card-project">
+                <img src="{{image}}" alt="Project Image" class="card-image-project"
+                    style="width: 100%; max-width: 350px;">
+                <div class="card-content">
+                    <h2 class="card-title">
+                        <a href="/project-detail/{{id}}" target="_blank">{{title}}</a>
+                    </h2>
+                    <p class="card-duration">Durasi: {{description}} Hari</p>
+                    <h5 class="card-duration">Teknologi yang digunakan:</h5>
+                    <div class="card-technologies">{{technologies}}</div>
+                    <p class="card-description" style="font-size: 15px;"><b>Deskripsi</b></p>
+                    <p class="card-description">{{message}}</p>
+
+                    <div class="card-icons">
+                        <img src="/asset/img/web.png" alt="Web" class="icon">
+                        <img src="/asset/img/android.png" alt="Android" class="icon">
+                        <img src="/asset/img/javascript.png" alt="JavaScript" class="icon">
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="project-author px-1">
+                            Project Dibuat oleh <b>{{name}}</b>
+                        </div>
+                        {{#if ../user}}
+                        <div class="card-buttons py-3 mt-auto">
+                            <a href="/edit-project/{{id}}" class="btn edit-btn">Edit</a>
+                            <form action="/delete-project/{{id}}" method="post" onsubmit="confirmLogout()"
+                                class="delete-form">
+                                <button type="submit" class="btn delete-btn" style="width: 50px;">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                        {{/if}}
                     </div>
                 </div>
             </div>
         </div>
+
         {{/each}}
     </div>
     </div>
     </div>
 
+    <script>
+        function confirmLogout() {
+            confirm("Apakah Anda yakin ingin menghapus ini?");
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    {{!--
-    <script src="/asset/js/myProject.js"></script> --}}
+
 </body>
 
 </html>
