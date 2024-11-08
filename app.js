@@ -43,9 +43,8 @@ app.use(
 app.use(flash());
 
 app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
-app.use("/asset/css", express.static("./src/asset/css"));
-app.use("/asset/img", express.static("./src/asset/img"));
-app.use("/asset/js", express.static("./src/asset/js"));
+app.use("/asset", express.static(path.join(__dirname, "./src/asset")));
+
 app.use(express.urlencoded({ extended: true }));
 
 
