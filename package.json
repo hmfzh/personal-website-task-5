@@ -4,6 +4,7 @@
   "description": "this is my personal website",
   "main": "index.js",
   "scripts": {
+    "postinstall": "sequelize db:migrate",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
